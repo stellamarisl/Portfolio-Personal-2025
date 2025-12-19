@@ -17,9 +17,10 @@
 html{
     scroll-behavior: smooth;
     font-family: var(--font-title);
-
 }
-
+html, body{
+    overflow-x: hidden;
+}
 /* NAVBAR FIJA */
 .header {
     position: fixed;
@@ -423,133 +424,197 @@ textarea {
 }
 
 
-/* RESPONSIVE NAV MOBILE */
-@media (max-width: 360px) {
-    header{
-        padding:15px 20px;
+/* RESPONSIVE TABLET 992PX*/
+/*header y barra de navegacion*/
+@media (max-width: 992px) {
+    html {
+        scroll-padding-top: 90px;
+    }
+    .header {
+        height: auto;
+        padding: 12px 20px;
         justify-content: center;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
     }
     
-    #conocimientos,
-    #proyectos,
-    #contacto,
-    #hola{
-        scroll-margin-top: 100px;
-    }
-    .nav{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-    .nav-links {
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-        gap: 5px;
-        font-size: 0.5rem;
-    }
-    .boton-contacto{
+    .boton-contacto {
+        padding: 0.7rem 1.3rem;
         margin-left: 0;
     }
-    .boton-contacto, .link-boton{
-        font-size: 0.2rem;
-        padding: 4px 8px;
-    }
-    
-}
-/* RESPONSIVE PRESENTACIÓN */
-@media (max-width: 768px) {
+    /*presentacion*/
     .contenedor-presentacion {
         flex-direction: column;
-        padding: 0 20px;
+        text-align: center;
+        min-height: initial;          /* CLAVE */
+        margin-top: 140px;         /* bajamos un poco */
+        padding: 40px 8%;
+        gap: 40px;
     }
+
     .presentacion-texto {
         align-items: center;
     }
 
+    .presentacion-texto span {
+        font-size: 2.4rem;
+    }
+
+    .presentacion-texto p {
+        max-width: 100%;
+    }
+
     .fotografia {
-        margin-top: 30px;
-        width: 200px;
+        width: 220px;
         height: auto;
     }
-}
-/* RESPONSIVE CITA */
-@media (max-width: 360px) {
-    .cita{
-        padding: 40px 15px;
-    } 
-    .cita p{
-        font-size: 1.2rem;
-        padding: 20px;
-    }
-    .cita-container .autor{
-        font-size: 1rem;
-        margin-top: 20px;
-    }
-}
 
-/*RESPONSIVE HABILIDADES*/
-@media (max-width: 600px) {
-    .habilidades-tarjeta{ 
-        width: 150px;
-        height: 150px;
-    }
-}
-
-/*RESPONSIVE TRABAJOS*/
-@media (max-width: 768px) {
-    .trabajo-card{ 
-        width: 90%;
-        max-width: 320px;
-    }
-}
-@media (max-width: 480px) {
-    .trabajos {
-        padding: 10px 20px;
-    }
-}
-@media (max-width: 360px) {
-    .trabajos h2 {
-        font-size: 1.8rem;
-    }
-}
-@media (max-width: 360px) {
-    .trabajo-card img{ 
-        width: 120px;
-    }
-    .trabajo-card{
-        width: 180px;
-        min-height: 220px;
-    }
-}
-
-/*RESPONSIVE CONTACTAME*/
-@media (max-width: 768px) {
-    .contenedor-contacto {
-        flex-direction: column;
-        padding: 30px;
+    /*habilidades*/
+    .habilidades-seccion{
+        display: flex;
+        justify-content: center;
+        padding: 120px 20px;
     }
 
-    .columna-izquierda,
-    .columna-derecha {
+    .habilidades-seccion h2{
+        font-size: 2.2rem;
+    }
+
+    .contenedor-habilidades{
+        max-width: 900px;
         width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
     }
-    .columna-derecha h2,
-    .columna-izquierda h2 {
-        font-size: 1.2rem;
+
+    .habilidades-tarjeta{
+        width: 160px;
+        height: 160px;
     }
-    .columna-izquierda p {
+
+    .habilidades-tarjeta img{
+        width: 55px;
+    }
+    /*cita*/
+    .cita {
+        display: flex;
+        justify-content: center;
+        padding: 120px 120px;
+    }
+
+    .cita p {
+        max-width: 900px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .autor {
+        font-size: 1.1rem;
+    }
+}
+/* RESPONSIVE TABLET CHICA 768PX NO HIZO FALTA TOCAR NADA QUEDO PERFECTO*/
+/* RESPONSIVE MOBILE 480PX*/
+/*header y barra de navegacion*/
+@media (max-width: 480px) {
+    .header{
+        padding: 15px;
+        margin-bottom: 80px;
+    }
+
+    .nav-links{
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .nav-links a{
         font-size: 0.9rem;
     }
 
+    .boton-contacto{
+
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+/*presentacion*/
+.contenedor-presentacion{
+        padding: 32px 20px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .presentacion-texto h2{
+        font-size: 1.6rem;
+    }
+
+    .presentacion-texto span{
+        font-size: 1.9rem;
+    }
+
+    .presentacion-texto p{
+        font-size: 0.95rem;
+    }
+
+    .boton-presentacion{
+        font-size: 0.95rem;
+        padding: 0.9rem 1.6rem;
+    }
+
+    .fotografia{
+        width: 170px;
+    }
+/*cita*/
+    .cita {
+        padding: 2rem 1rem;
+    }
+    .cita p {
+        font-size: 1.3rem;
+        line-height: 1.6;
+        padding: 1.5rem;
+        max-width: 100%;
+    }
+
+    .autor {
+        font-size: 1rem;
+        margin-top: 20px;
+    }
+    /*contacto*/
+    .seccion-contacto h2{
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+        
+    }
+    .contenedor-contacto{
+        width: 100%;
+        flex-direction: column;
+        padding: 0.5rem;
+    }
+
+    .columna-izquierda{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .columna-derecha {
+        padding-right: 1rem;
+        padding-left: 1rem;
+        width: 90%;
+    }
+    
     .fila {
         flex-direction: column;
     }
-}
-/*RESPONSIVE FOOTER*/
-@media (max-width: 360px) {
-    .footer-navegacion a{
-        font-size: 0.8rem;
-    }
-    
+
+
 }
